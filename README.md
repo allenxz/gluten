@@ -6,5 +6,5 @@
 
 **五月**
 
-【05-06】[跨域](docs/javascript/test.md)
+:zero::six: [跨域](docs/javascript/test.md)
 
