@@ -54,10 +54,11 @@ CORS需要服务器和浏览器同时支持，但是整个通信过程CORS是浏
 浏览器把CORS请求分为两类，简单请求和非简单请求。
 只要满足一下两大条件，就属于简单请求：
 
-1. 请求方法是HEAD、GET、POST中的一种
-2. HTTP中的头信息不超过一下几种字段：
-   * Accpt Accpt-Language Content-Language Last-Event-ID 
-   * Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
+(1)请求方法是HEAD、GET、POST中的一种
+
+(2)HTTP中的头信息不超过一下几种字段：
+* Accpt Accpt-Language Content-Language Last-Event-ID 
+* Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
 
 不满足以上两个条件的就是非简单请求。
 
@@ -69,8 +70,11 @@ CORS需要服务器和浏览器同时支持，但是整个通信过程CORS是浏
 如果Origin指定的源不在许可范围中，服务器会返回一个正常的Http响应。但是这个响应是没包含Access-Control-Allow-Origin字段的，浏览器发现了就会知道请求出错了，然后抛出一个错误，被XmlHttpRequest的onerror回调函数捕获。
 
 而如果Origin指定的域名在许可范围之内，服务器返回的响应的头信息就会多几个字段：
-Access-Control-Allow-Origin（值为Origin字段的值或者*），
+
+Access-Control-Allow-Origin（值为Origin字段的值或者*）
+
 Access-Control-Allow-Credentials（表示请求中是否允许携带Cookie）
+
 Access-Control-Expose-Headers（用于表明想要获取的基本字段外的其他字段）
 
 
@@ -88,7 +92,7 @@ Access-Control-Expose-Headers（用于表明想要获取的基本字段外的其
 
 
 
-服务器收到预检请求，检查了Origin、Access-Control-Request-Method和Access-Control-Request-Headers字段后，确定是否允许跨源请求，就会做出回应。回应的具体处理和简单请求的服务器回应基本相同。只不过回应中的头信息字段有些不同：
+服务器收到预检请求，检查了`Origin`、`Access-Control-Request-Method`和`Access-Control-Request-Headers`字段后，确定是否允许跨源请求，就会做出回应。回应的具体处理和简单请求的服务器回应基本相同。只不过回应中的头信息字段有些不同：
 
 * Access-Control-Allow-Methods（值为逗号分隔的字符串，表明服务器支持的所有跨域请求的方法）
 * Access-Control-Allow-Headers（值也是逗号分隔的字符串，表明服务器支持的所有头信息）
