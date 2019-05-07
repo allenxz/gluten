@@ -8,3 +8,5 @@
 
 :cloud: 5月6日:cloud:  [跨域](docs/Cross-domain.md)
 
+:cloud: 5月7日:cloud:  [HTTP常用方法](docs/HTTP-common-method.md)
+
