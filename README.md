@@ -6,5 +6,5 @@
 
 **五月**​ 
 
-:cloud: 5月6日:cloud:  [跨域](docs/javascript/Cross-domain.md)
+:cloud: 5月6日:cloud:  [跨域](docs/Cross-domain.md)
 
